@@ -1,0 +1,170 @@
+
+/* .center_y {
+    position: absolute;
+    width: 2px;
+    height: calc(100vh - 50px);
+    top: 50px;
+    left: 50%;
+    background: blue;
+}
+
+.center_x {
+    position: absolute;
+    width: 100vw;
+    height: 2px;
+    top: calc((100% - 50px) / 2);
+    background: blue;
+} */
+
+nav {
+    
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    line-height: 50px;
+
+    background: var(--menu-bg);
+    color: var(--dark-grid);
+
+    user-select: none;
+}
+
+
+.logo {
+    
+    width: 180px;
+    padding: 0px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    /* background: #59ff6f; */
+}
+
+.nav-content{
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    /* line-height: 50px; */
+}
+
+.settings-left {
+    width: 350px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.settings-left ul {
+    float: right;
+}
+
+.settings-right {
+    width: 350px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+
+li {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+li span{
+    padding: .5rem 11px;
+    cursor: pointer;
+}
+
+li span:hover{
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--button), 0 0 5px var(--button);
+}   
+
+.solve {
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    /* margin: 0px 19px; */
+    width: 250px;
+}
+
+.solve span {
+    background: var(--dark-grid);
+    color: var(--menu-bg);
+    font-weight: 800;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+.solve span:hover{
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--button), 0 0 5px var(--button);
+}
+
+/* Sublists style */
+
+ul li:hover ul{
+    top: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+ul ul {
+    position: absolute;
+    top: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--menu-bg);
+    border: 2px solid var(--button);
+}
+
+ul ul li{
+    display: flex;
+    position: relative;
+    padding: 5px 0px;
+    float: none;
+    line-height: 1rem;
+    /* display: list-item; */
+}
+
+
+@media screen and (max-width: 1130px) {
+    ul ul {
+        top: 110px;
+    }
+    ul li:hover ul{
+        top: 100px;
+    }
+}
+/* @media screen and (max-width: 950px){
+    .settings-left{
+        display: none;
+    }
+
+    .settings-right{
+        display: none;
+    }
+} */
+
+
+.filler {
+    /* flex-grow: 1; */
+    max-width: 150px;
+    min-width: 180px;
+    /* background: #59ff6f; */
+}
+
+
+
+
+
+
+
+
