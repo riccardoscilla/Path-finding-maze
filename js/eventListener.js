@@ -178,7 +178,7 @@ function transitionTimeEventListener(grid) {
 }
 
 function titleEventListener(grid) {
-    let title_btn = document.querySelector(".logo")
+    let title_btn = document.querySelector(".title")
     title_btn.addEventListener("click", function () {
 
         grid.setTransitionTime(10)

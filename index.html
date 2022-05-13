@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css\font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/menu.css">
@@ -19,126 +20,131 @@
     <script type="text/javascript" src="js/eventListener.js"></script>
     <title>Amazing Maze</title>
 </head>
+
 <body>
 
     <div class="app">
 
 
         <nav>
-            <div class="logo">AmazingMaze</div>
+            <div class="logo-content title">
+                <div class="logo-icon">
+                    <i class='bx bx-home-alt-2'></i>
+                </div>
+                <span class="logo-label">
+                    AmazingMaze
+                </span>
+            </div>
 
 
             <div class="nav-content">
 
-                <div class="settings-left">
-                    <ul>
-                        <li>
-                            <span>Maze</span>
-                            <ul>
-                                <li><span class="maze random">Random</span></li>
-                                <li><span class="maze recursive-backtracking">Recursive Backtracking</span></li>
-                                <li><span class="maze recursive-division">Recursive Division</span></li>
-                            </ul>
-                        </li>
+                <div class="menu-setting">
+                    <div class="menu-setting-nav">
+                        <div class="icon">
+                            <i class='bx bx-grid-alt'></i>
+                        </div>
+                        <span class="icon-label">
+                            Pick a maze
+                        </span>
+                    </div>
 
-                        <li>
-                            <span>Algorithm</span>
-                            <ul>
-                                <li><span class="algo">Dijkstra</span></li>
-                                <li><span class="algo">A* Search</span></li>
-                                <!-- <li><span class="algo">IDA* Search</span></li> -->
-                                <li><span class="algo">DFS</span></li>
-                                <li><span class="algo">BFS</span></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <span>Victim</span>
-                        </li>
-
-                        <li>
-                            <span>Weights</span>
-                        </li>
-
-                    </ul>
+                    <div class="sub-menu-content">
+                        <div class="sub-menu-item maze random">Random</div>
+                        <div class="sub-menu-item maze recursive-division">Recursive Division</div>
+                        <div class="sub-menu-item maze recursive-backtracking">Recursive Backtracking</div>
+                    </div>
                 </div>
 
-
-
-                <div class="solve">
-                    <span class="solve-text">Solve</span>
+                <div class="menu-setting">
+                    <div class="menu-setting-nav">
+                        <div class="icon">
+                            <i class='bx bx-analyse'></i>
+                        </div>
+                        <span class="icon-label">
+                            Pick an algorithm
+                        </span>
+                    </div>
+                    <div class="sub-menu-content">
+                        <div class="sub-menu-item algo ">Dijkstra</div>
+                        <div class="sub-menu-item algo ">A* Search</div>
+                        <div class="sub-menu-item algo ">BFS</div>
+                        <div class="sub-menu-item algo ">DFS</div>
+                    </div>
                 </div>
 
-
-                <div class="settings-right">
-                    <ul>
-                        <li>
-                            <span class="clear">Clear</span>
-                        </li>
-
-                        <li>
-                            <span>Grid Size</span>
-
-                            <ul>
-                                <li>
-                                    <span class="gridsize grid-small">Small</span>
-                                </li>
-
-                                <li>
-                                    <span class="gridsize grid-medium">Medium</span>
-                                </li>
-
-                                <li>
-                                    <span class="gridsize grid-large">Large</span>
-                                </li>
-
-                            </ul>
-                            
-
-
-                        </li>
-
-                        <li>
-                            <span>Speed</span>
-
-                            <ul>
-                                <li>
-                                    <span class="transition transition-instant">Instant</span>
-                                </li>
-
-                                <li>
-                                    <span class="transition transition-slow">Slow</span>
-                                </li>
-
-                                <li>
-                                    <span class="transition transition-middle">Middle</span>
-                                </li>
-
-                                <li>
-                                    <span class="transition transition-fast">Fast</span>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <span>Benchmark</span>
-                        </li>
-                    </ul>
+                <div class="menu-setting ">
+                    <div class="menu-setting-nav solve">
+                        <div class="icon">
+                            <i class='bx bx-compass'></i></i>
+                        </div>
+                        <span class="icon-label solve-text">
+                            SOLVE!
+                        </span>
+                    </div>
                 </div>
 
+                <div class="menu-setting">
+                    <div class="menu-setting-nav clear">
+                        <div class="icon">
+                            <i class='bx bx-reset'></i>
+                        </div>
+                        <span class="icon-label">
+                            Reset
+                        </span>
+                    </div>
+                </div>
+
+                <div class="menu-setting">
+                    <div class="menu-setting-nav">
+                        <div class="icon">
+                            <i class='bx bx-home-alt-2'></i>
+                        </div>
+                        <span class="icon-label">
+                            Benchmark
+                        </span>
+
+                    </div>
+                </div>
 
             </div>
 
-            <div class="filler"></div>
+            <div class="logo-content settings">
+                <span class="logo-label">
+                </span>
+                <div class="logo-icon">
+                    <i class='bx bx-wrench'></i></i>
+                </div>
+
+
+                <div class="sub-menu-content-settings">
+                    <div class="sub-menu-item size">
+                        Grid size
+                        <div class="sub-menu-content-settings-sub">
+                            <div class="sub-menu-item gridsize grid-small">Small</div>
+                            <div class="sub-menu-item gridsize grid-medium">Medium</div>
+                            <div class="sub-menu-item gridsize grid-large">Large</div>
+                        </div>
+                    </div>
+
+                    <div class="sub-menu-item speed">
+                        Speed
+                        <div class="sub-menu-content-settings-sub">
+                            <div class="sub-menu-item transition transition-instant">Instant</div>
+                            <div class="sub-menu-item transition transition-slow">Slow</div>
+                            <div class="sub-menu-item transition transition-middle">Middle</div>
+                            <div class="sub-menu-item transition transition-fast">Fast</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
         </nav>
 
 
-        
-    
-        
+
         <div id="grid_container"></div>
 
 
@@ -147,6 +153,7 @@
 
     <!-- <div class="center_y"></div>
     <div class="center_x"></div> -->
-    
+
 </body>
+
 </html>

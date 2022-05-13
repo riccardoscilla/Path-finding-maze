@@ -10,6 +10,8 @@
 :root {
     font-size: 14px;
     font-family: 'Open Sans';
+
+    --nav-height: 80px;
     
 
     --wall: #304d63;
