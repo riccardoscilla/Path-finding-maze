@@ -42,6 +42,18 @@ function wallEventListener(grid) {
     
 }
 
+function toggleTooltip(msg){
+    let tooltip = document.querySelector(".tooltip")
+    tooltip.innerHTML = msg
+
+    tooltip.style.visibility = "visible"
+    tooltip.style.opacity = "1"
+
+    var timeOut = setTimeout(function () {
+        tooltip.style.visibility = "hidden"
+        tooltip.style.opacity = "0"
+    }, 2000);
+}
 
 
 function clearEventListener(grid) {
@@ -58,6 +70,8 @@ function mazeEventListener(grid) {
             return
         // maze button
         if (el.target.classList.contains("maze")){
+            document.querySelector(".maze-label").innerHTML = el.target.innerHTML
+
             grid.reset()
 
             if (el.target.classList.contains("random"))
@@ -81,7 +95,7 @@ function algorithmEventListener(grid){
         // algorithm button
         if (el.target.classList.contains("algo")){
             grid.setAlgorithm(el.target.innerHTML)
-            document.querySelector(".solve-text").innerHTML = "Solve: "+grid.algo_name+"!"
+            document.querySelector(".algo-label").innerHTML = grid.algo_name
         }
     })
 }
@@ -104,6 +118,10 @@ function solveEventListener(grid) {
         }
 
         // if algo not specified --> tooltip
+        if (!grid.algo_name){
+            toggleTooltip("No algo selected")
+            return
+        }
 
         
         grid.clearPath()
@@ -113,8 +131,6 @@ function solveEventListener(grid) {
             Dijkstra(grid)
         else if (grid.algo_name === "A* Search")
             Astar(grid)
-        // else if (grid.algo_name === "IDA* Search")
-        //     IDAstar(grid)
         else if (grid.algo_name === "DFS")
             DFS(grid)
         else if (grid.algo_name === "BFS")
@@ -146,6 +162,12 @@ function gridsizeEventListener(grid) {
     })
 }
 
+function benchmarkEventListener(grid) {
+    document.querySelector(".benchmark").addEventListener("click", function () {
+        toggleTooltip("Feature not implemented yet")
+    })
+}
+
 function transitionTimeEventListener(grid) {
     document.querySelector("nav").addEventListener("click", function (el) {
         if (!el.target.className)
@@ -157,9 +179,6 @@ function transitionTimeEventListener(grid) {
             let pattern_tmp = [...grid.pattern]
             grid.resetPattern()
 
-            // console.log(grid.pattern.length)
-
-
             if (el.target.classList.contains("transition-slow"))
                 grid.setTransitionTime(500)
             else if (el.target.classList.contains("transition-middle"))
@@ -168,8 +187,6 @@ function transitionTimeEventListener(grid) {
                 grid.setTransitionTime(10)
             else if (el.target.classList.contains("transition-instant"))
                 grid.setTransitionTime(0)
-
-            // console.log(grid.transition_time)
 
             grid.pattern = Array.from(pattern_tmp)
             grid.drawPattern()
@@ -214,6 +231,8 @@ function startEventListener(grid){
     solveEventListener(grid)
 
     clearEventListener(grid)
+    benchmarkEventListener(grid)
+
     gridsizeEventListener(grid)
     transitionTimeEventListener(grid)
 }

@@ -1,7 +1,7 @@
 class Grid {
     constructor() {
         this.max_col = 43
-        this.max_row = 27//19
+        this.max_row = 19
         this.aspect = getAspect()
         this.transition_time = 10
 
