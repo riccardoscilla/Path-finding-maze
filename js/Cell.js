@@ -47,11 +47,16 @@ class Cell {
         if ((this.x + this.y) % 2 !== 0)
             this.element.classList.add("dark")
 
+        // this.element.draggable = false
+
 
         this.cell = document.createElement("div");
         this.cell.classList.add("cell")
-        this.element.appendChild(this.cell)
+        // this.element.ondragover = dragover
+        // this.element.ondragenter = dragenter
+        // this.element.ondragleave = this.ciao
 
+        this.element.appendChild(this.cell)
         this.parent.appendChild(this.element)
     }
 
@@ -83,7 +88,7 @@ class Cell {
     }
 
     setEmpty() {
-        if (this.isStart || this.isGoal) return
+        // if (this.isStart || this.isGoal) return
         
         this.cell.classList.remove("wall")
         this.cell.classList.remove("visited")
@@ -106,5 +111,6 @@ class Cell {
         this.cell.classList.add("path")
         this.isPath = true
     }
+
 
 }

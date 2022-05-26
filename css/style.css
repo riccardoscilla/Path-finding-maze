@@ -100,12 +100,16 @@ div.cell.start {
     background: var(--start);
     width: 100%;
     height: 100%;
+    cursor: grab;
+    transition: none;
 }
 
 div.cell.goal {
     background: var(--goal);
     width: 100%;
     height: 100%;
+    cursor: grab;
+    transition: none;
 }
 
 div.cell.wall {

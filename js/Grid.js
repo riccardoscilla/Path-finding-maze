@@ -37,7 +37,6 @@ class Grid {
     
 
     drawPattern(){
-        // this.pattern = onlyUnique(this.pattern)
         // do not use timer 
         if (this.transition_time === 0){
             while(this.pattern.length){
@@ -57,14 +56,11 @@ class Grid {
 
     }
 
-    find(cell){
-        for (let y = 0; y < this.max_row; y++) {
-            for (let x = 0; x < this.max_col; x++) {
-                let candidate_id = y+","+x
-                if (cell.id === candidate_id)
-                    return this.grid[y][x]
-            }
-        }
+    find(cell){ // from td to cell object
+        let text = cell.id
+        let pattern = /(?<y>\d+),(?<x>\d+)/
+        let result = text.match(pattern)
+        return this.grid[result.groups['y']][result.groups['x']]
     }
 
     clearPath(){
@@ -116,7 +112,7 @@ class Grid {
 
     setAspect(aspect){
         this.aspect= aspect
-        console.log("aspect changed",aspect)
+        // console.log("aspect changed",aspect)
         for (let y = 0; y < this.max_row; y++) {
             for (let x = 0; x < this.max_col; x++) {
                 
